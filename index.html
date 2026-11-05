@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shrishail Hireholi — Senior Accountant & Tax Analyst Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #06110C;
+            color: #f8fafc;
+        }
+        /* Custom Spotlight Card Hover Effect */
+        .spotlight-card {
+            position: relative;
+            overflow: hidden;
+            background-color: #171717;
+        }
+        .spotlight-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(163, 28, 24, 0.18), transparent 40%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+        .spotlight-card:hover::before {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="selection:bg-[#A31C18] selection:text-white relative overflow-x-hidden">
+
+    <!-- Background Grid & Gradients -->
+    <div class="fixed inset-0 pointer-events-none opacity-[0.25] z-0 bg-[radial-gradient(#A31C18_1px,transparent_1px)] [background-size:32px_32px]"></div>
+    <div class="fixed top-0 left-1/4 w-[600px] h-[600px] bg-[#A31C18]/10 rounded-full blur-[140px] pointer-events-none"></div>
+    <div class="fixed bottom-0 right-1/4 w-[600px] h-[600px] bg-[#06110C] border border-[#A31C18]/20 rounded-full blur-[160px] pointer-events-none"></div>
+
+    <!-- Floating Pill Navigation Header -->
+    <header class="fixed top-4 inset-x-0 z-50 flex justify-center px-4">
+        <nav id="navbar" class="bg-[#171717]/90 backdrop-blur-md border border-[#A31C18]/30 shadow-2xl shadow-black/80 rounded-full px-3 py-2 flex items-center gap-1 md:gap-2 transition-all duration-300">
+            
+            <!-- Logo Badge -->
+            <a href="#home" class="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#A31C18] text-white font-black text-xs tracking-wider uppercase hover:bg-red-600 transition-colors mr-1 shadow-md shadow-[#A31C18]/40">
+                <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+                Shrishail.
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <div class="hidden lg:flex items-center gap-1 text-xs font-medium text-slate-300">
+                <a href="#home" class="nav-link px-3 py-1.5 rounded-full transition-all duration-200 hover:text-white hover:bg-slate-800/80">Home</a>
+                <a href="#about" class="nav-link px-3 py-1.5 rounded-full transition-all duration-200 hover:text-white hover:bg-slate-800/80">About</a>
+                <a href="#education" class="nav-link px-3 py-1.5 rounded-full transition-all duration-200 hover:text-white hover:bg-slate-800/80">Education</a>
+                <a href="#skills" class="nav-link px-3 py-1.5 rounded-full transition-all duration-200 hover:text-white hover:bg-slate-800/80">Skills</a>
+                <a href="#experience" class="nav-link px-3 py-1.5 rounded-full transition-all duration-200 hover:text-white hover:bg-slate-800/80">Work Experience</a>
+                <a href="#achievements" class="nav-link px-3 py-1.5 rounded-full transition-all duration-200 hover:text-white hover:bg-slate-800/80">Impact</a>
+                <a href="#projects" class="nav-link px-3 py-1.5 rounded-full transition-all duration-200 hover:text-white hover:bg-slate-800/80">Projects</a>
+                <a href="#credentials" class="nav-link px-3 py-1.5 rounded-full transition-all duration-200 hover:text-white hover:bg-slate-800/80">Credentials</a>
+            </div>
+
+            <!-- Contact CTA -->
+            <a href="#contact" class="hidden sm:flex items-center gap-1.5 bg-[#A31C18] hover:bg-[#c2231e] text-white text-xs font-semibold px-4 py-2 rounded-full transition-all shadow-lg shadow-[#A31C18]/30 hover:scale-[1.03] active:scale-[0.98]">
+                Contact me
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-full text-slate-200 hover:bg-slate-800">
+                <i data-lucide="menu" class="w-5 h-5"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-black/80 backdrop-blur-md hidden justify-end">
+        <div class="w-4/5 max-w-sm bg-[#171717] border-l border-[#A31C18]/30 h-full shadow-2xl p-6 flex flex-col justify-between overflow-y-auto">
+            <div class="space-y-6 pt-16">
+                <div class="flex justify-between items-center">
+                    <span class="text-xs font-bold uppercase tracking-wider text-[#A31C18]">Navigation Menu</span>
+                    <button id="mobile-close-btn" class="p-2 text-slate-300 hover:text-white"><i data-lucide="x" class="w-5 h-5"></i></button>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <a href="#home" class="mobile-link text-left px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800">Home</a>
+                    <a href="#about" class="mobile-link text-left px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800">About</a>
+                    <a href="#education" class="mobile-link text-left px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800">Education</a>
+                    <a href="#skills" class="mobile-link text-left px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800">Skills</a>
+                    <a href="#experience" class="mobile-link text-left px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800">Work Experience</a>
+                    <a href="#achievements" class="mobile-link text-left px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800">Achievements & Impact</a>
+                    <a href="#projects" class="mobile-link text-left px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800">Projects</a>
+                    <a href="#credentials" class="mobile-link text-left px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800">Credentials</a>
+                    <a href="#contact" class="mobile-link text-left px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800">Contact Me</a>
+                </div>
+            </div>
+            <div class="pt-6 border-t border-slate-800">
+                <p class="text-xs text-slate-400">© 2026 Shrishail Hireholi. Portfolio.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <main class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-28 pb-20 space-y-24">
+
+        <!-- HERO SECTION -->
+        <section id="home" class="scroll-mt-32">
+            <div class="spotlight-card relative bg-[#171717] rounded-3xl border border-slate-800 p-6 sm:p-12 lg:p-16 overflow-hidden shadow-2xl">
+                <!-- Crimson Red Top Line -->
+                <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#A31C18] via-red-500 to-[#A31C18]"></div>
+                
+                <div class="space-y-8 max-w-3xl relative z-10">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#06110C] border border-[#A31C18]/40 text-rose-400 text-xs font-semibold">
+                        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-[#A31C18] animate-spin" style="animation-duration: 5s;"></i>
+                        <span>Senior Accountant & Tax Analyst</span>
+                    </div>
+
+                    <div class="space-y-2">
+                        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.05]">
+                            Hello, I'm a <br>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#A31C18] via-red-500 to-rose-400">
+                                Senior Accountant
+                            </span>
+                        </h1>
+                    </div>
+
+                    <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-normal max-w-2xl">
+                        Accounting professional with 3.6+ years of experience in end-to-end P2P & O2C operations, statutory compliance (GST, TDS, Income Tax), financial reporting, audit scheduling, and SAP FI / Advanced Excel financial modeling.
+                    </p>
+
+                    <div class="flex flex-wrap items-center gap-4 pt-4">
+                        <a href="#projects" class="inline-flex items-center gap-2 bg-[#A31C18] hover:bg-[#c2231e] text-white font-bold px-7 py-3.5 rounded-full transition-all duration-300 shadow-lg shadow-[#A31C18]/40 hover:-translate-y-0.5 text-sm">
+                            <span>Explore Portfolio</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#contact" class="inline-flex items-center gap-2 bg-[#171717] hover:bg-slate-800 text-slate-200 border border-slate-700 font-bold px-7 py-3.5 rounded-full transition-all duration-300 text-sm">
+                            <span>Get in Touch</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="scroll-mt-32">
+            <div class="spotlight-card relative bg-[#171717] border border-[#A31C18]/40 text-white rounded-3xl p-6 sm:p-10 md:p-14 shadow-2xl overflow-hidden">
+                <div class="absolute -right-16 -top-16 w-80 h-80 bg-[#A31C18]/20 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="relative z-10 space-y-8">
+                    <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800 pb-6">
+                        <div>
+                            <div class="text-xs font-bold uppercase tracking-widest text-[#A31C18]">ABOUT SHRISHAIL HIREHOLI</div>
+                            <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight mt-1">
+                                What I'm Looking For
+                            </h2>
+                        </div>
+                        <div class="inline-flex items-center gap-2 bg-[#06110C] px-4 py-2 rounded-full text-xs font-semibold border border-[#A31C18]/40 text-rose-300">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                            <span>OPEN TO SENIOR ACCOUNTING & TAXATION ROLES</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                        <div class="lg:col-span-8 space-y-6">
+                            <p class="text-slate-200 text-base sm:text-lg leading-relaxed font-normal">
+                                Hi, my name is <strong class="text-white border-b-2 border-[#A31C18] pb-0.5">Shrishail Hireholi</strong>! I am an experienced accounting professional seeking a challenging <span class="text-rose-400 font-semibold">Senior Accountant / Tax Analyst</span> role. I specialize in managing complete Procure-to-Pay (P2P) and Order-to-Cash (O2C) cycles, handling end-to-end statutory taxation (GST, TDS, Income Tax), preparing MIS reports, leading bank & vendor reconciliations, and supporting Tax Audits with accurate audit schedules.
+                            </p>
+
+                            <div class="bg-[#06110C] p-6 rounded-2xl border border-slate-800 space-y-4">
+                                <div class="text-xs font-bold uppercase tracking-wider text-[#A31C18]">Professional Introduction & Background</div>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-slate-300">
+                                    <div>
+                                        <strong class="text-white block mb-1">Core Expertise:</strong>
+                                        P2P & O2C Management, GST (GSTR-1, GSTR-3B), TDS Workings & Filings, Tax Audit Schedules, Forex & Customs Compliance.
+                                    </div>
+                                    <div>
+                                        <strong class="text-white block mb-1">Technical Stack:</strong>
+                                        SAP FI (SD & MM Integration), Tally Prime, Zoho Books, QuickBooks, Power BI, Advanced Excel (Power Query), ICEGATE & DGFT.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lg:col-span-4 bg-[#06110C] p-6 rounded-2xl border border-slate-800 space-y-4">
+                            <div class="text-xs font-bold uppercase tracking-wider text-rose-400">Quick Stats</div>
+                            <div class="space-y-3 text-xs">
+                                <div class="flex justify-between border-b border-slate-800/80 pb-2">
+                                    <span class="text-slate-400">Experience:</span>
+                                    <span class="font-bold text-white">3.6+ Years</span>
+                                </div>
+                                <div class="flex justify-between border-b border-slate-800/80 pb-2">
+                                    <span class="text-slate-400">Current Role:</span>
+                                    <span class="font-bold text-white">Tax Analyst @ Swan & Associates</span>
+                                </div>
+                                <div class="flex justify-between border-b border-slate-800/80 pb-2">
+                                    <span class="text-slate-400">Alma Mater:</span>
+                                    <span class="font-bold text-white">GFGC College Dharwad (B.Com)</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-slate-400">Focus:</span>
+                                    <span class="font-bold text-white">Taxation & SAP FI Accounting</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION SECTION -->
+        <section id="education" class="scroll-mt-32 space-y-8">
+            <div>
+                <div class="text-xs font-bold uppercase tracking-wider text-[#A31C18]">Academic Background</div>
+                <h2 class="text-3xl font-black text-white tracking-tight">Education.</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="spotlight-card bg-[#171717] border border-slate-800 hover:border-[#A31C18] p-6 rounded-2xl shadow-xl transition-all group">
+                    <div class="text-4xl font-black text-[#A31C18]/30 group-hover:text-[#A31C18] transition-colors mb-3">01</div>
+                    <h3 class="text-lg font-bold text-white leading-snug">Government First Grade College (GFGC), Dharwad</h3>
+                    <p class="text-slate-400 text-xs font-medium mt-1">Bachelor of Commerce (B.Com)</p>
+                    <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs">
+                        <span class="text-slate-400 bg-[#06110C] px-3 py-1 rounded-md border border-slate-800">Graduated 2022</span>
+                        <span class="bg-[#A31C18] text-white font-bold px-2.5 py-0.5 rounded">71%</span>
+                    </div>
+                </div>
+
+                <div class="spotlight-card bg-[#171717] border border-slate-800 hover:border-[#A31C18] p-6 rounded-2xl shadow-xl transition-all group">
+                    <div class="text-4xl font-black text-[#A31C18]/30 group-hover:text-[#A31C18] transition-colors mb-3">02</div>
+                    <h3 class="text-lg font-bold text-white leading-snug">SAP FI & Financial Modeling Certification</h3>
+                    <p class="text-slate-400 text-xs font-medium mt-1">Integrated Financial Accounting, SD & MM Modules</p>
+                    <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs">
+                        <span class="text-slate-400 bg-[#06110C] px-3 py-1 rounded-md border border-slate-800">Advanced Training</span>
+                        <span class="bg-[#A31C18] text-white font-bold px-2.5 py-0.5 rounded">Certified</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS MATRIX -->
+        <section id="skills" class="scroll-mt-32 space-y-8">
+            <div>
+                <div class="text-xs font-bold uppercase tracking-wider text-[#A31C18]">Core Competencies</div>
+                <h2 class="text-3xl font-black text-white tracking-tight">Skills.</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Category 1 -->
+                <div class="spotlight-card bg-[#171717] p-6 rounded-2xl border border-slate-800 hover:border-[#A31C18]/60 shadow-lg space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                        <h3 class="font-extrabold text-xs uppercase tracking-wider text-white flex items-center gap-2">
+                            <i data-lucide="calculator" class="w-4 h-4 text-[#A31C18]"></i>
+                            ERP & ACCOUNTING SOFTWARE
+                        </h3>
+                        <span class="text-xs text-[#A31C18] font-bold">7 skills</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-[#06110C] text-slate-300 hover:text-white hover:bg-[#A31C18] text-xs font-semibold px-3.5 py-1.5 rounded-xl border border-slate-800 transition-all cursor-default">SAP FI</span>
+                        <span class="bg-[#06110C] text-slate-300 hover:text-white hover:bg-[#A31C18] text-xs font-semibold px-3.5 py-1.5 rounded-xl border border-slate-800 transition-all cursor-default">Tally Prime</span>
+                        <span class="bg-[#06110C] text-slate-300 hover:text-white hover:bg-[#A31C18] text-xs font-semibold px-3.5 py-1.5 rounded-xl border border-slate-800 transition-all cursor-default">Zoho Books</span>
+                        <span class="bg-[#06110C] text-slate-300 hover:text-white hover:bg-[#A31C18] text-xs font-semibold px-3.5 py-1.5 rounded-xl border border-slate-800 transition-all cursor-default">QuickBooks</span>
+                        <span class="bg-[#06110C] text-slate-300 hover:text-white hover:bg-[#A31C18] text-xs font-semibold px-3.5 py-1.5 rounded-xl border border-slate-800 transition-all cursor-default">Winman TDS</span>
+                        <span class="bg-[#06110C] text-slate-300 hover:text-white hover:bg-[#A31C18] text-xs font-semibold px-3.5 py-1.5 rounded-xl border border-slate-800 transition-all cursor-default">SPEQTA GST</span>
+                        <span class="bg-[#06110C] text-slate-300 hover:text-white hover:bg-[#A31C18] text-xs font-semibold px-3.5 py-1.5 rounded-xl border border-slate-800 transition-all cursor-default">SAP SD & MM Integration</span>
+                    </div>
+                </div>
+
+                <!-- Category 2 -->
+                <div class="spotlight-card bg-[#171717] p-6 rounded-2xl border border-slate-800 hover:border-[#A31C18]/60 shadow-lg space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                        <h3 class="font-extrabold text-xs uppercase tracking-wider text-white flex items-center gap-2">
+                            <i data-lucide="file-text" class="w-4 h-4 text-[#A31C18]"></i>
+                            TAXATION & STATUTORY COMPLIANCE
+                        </h3>
+                        <span class="text-xs text-[#A31C18] font-bold">8 skills</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-[#06110C] text-slate-300 hover:text-white hover:bg-[#A31C18] text-xs font-semibold px-3.5 py-1.5 rounded-xl border border-slate-800 transition-all cursor-default">GST Filings (GSTR-1, GSTR-3B)</span>
+                        <span class="bg-[#06110C] text-slate-300 hover:text-white hover:bg-[#A31C18] text-xs font-semibold px-3.5 py-1.5 rounded-xl border border-slate-800 transition-all cursor-default">TDS Workings & Returns</span>
+                        <span class="bg-[#06110C] text-slate-300 hover:text-white hover:bg-[#A31C18] text-xs font-semibold px-3.5 py-1.5 rounded-xl border border-slate-800 transition-all cursor-default">Income Tax Compliance</span>
+                        <span class="bg-[#06110C] text-slate-300 hover:text-white hover:bg-[#A31C18] text-xs font-semibold px-3.5 py-1.5 rounded-xl border border-slate-800 transition-all cursor-default">Tax Audit Schedules</span>
+                        <span class="bg-[#06110C] text-slate-300 hover:text-white hover:bg-[#A31C18] text-xs font-semibold px-3.5 py-1.5 rounded-xl border border-slate-800 transition-all cursor-default">TRACES & GST Portal</span>
+                        <span class="bg-[#06110C] text-slate-300 hover:text-white hover:bg-[#A31C18] text-xs font-semibold px-3.5 py-1.5 rounded-xl border border-slate-800 transition-all cursor-default">ICEGATE & DGFT Documentation</span>
+                        <span class="bg-[#06110C] text-slate-300 hover:text-white hover:bg-[#A31C18] text-xs font-semibold px-3.5 py-1.5 rounded-xl border border-slate-800 transition-all cursor-default">GST Registration & TAN</span>
+                        <span class="bg-[#06110C] text-slate-300 hover:text-white hover:bg-[#A31C18] text-xs font-semibold px-3.5 py-1.5 rounded-xl border border-slate-800 transition-all cursor-default">e-Way Bills & e-Invoicing</span>
+                    </div>
+                </div>
+
+                <!-- Category 3 -->
+                <div class="spotlight-card bg-[#171717] p-6 rounded-2xl border border-slate-[#A31C18]/60 shadow-lg space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                        <h3 class="font-extrabold text-xs uppercase tracking-wider text-white flex items-center gap-2">
+                            <i data-lucide="trending-up" class="w-4 h-4 text-[#A31C18]"></i>
+                            FINANCIAL OPERATIONS & REPORTING
+                        </h3>
+                        <span class="text-xs text-[#A31C18] font-bold">8 skills</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-[#06110C] text-slate-300 hover:text-white hover:bg-[#A31C18] text-xs font-semibold px-3.5 py-1.5 rounded-xl border border-slate-800 transition-all cursor-default">Procure-to-Pay (P2P)</span>
+                        <span class="bg-[#06110C] text-slate-300 hover:text-white hover:bg-[#A31C18] text-xs font-semibold px-3.5 py-1.5 rounded-xl border border-slate-800 transition-all cursor-default">Order-to-Cash (O2C)</span>
+                        <span class="bg-[#06110C] text-slate-300 hover:text-white hover:bg-[#A31C18] text-xs font-semibold px-3.5 py-1.5 rounded-xl border border-slate-800 transition-all cursor-default">General Ledger & Reconciliations</span>
+                        <span class="bg-[#06110C] text-slate-300 hover:text-white hover:bg-[#A31C18] text-xs font-semibold px-3.5 py-1.5 rounded-xl border border-slate-800 transition-all cursor-default">Cash Flow Forecasting</span>
+                        <span class="bg-[#06110C] text-slate-300 hover:text-white hover:bg-[#A31C18] text-xs font-semibold px-3.5 py-1.5 rounded-xl border border-slate-800 transition-all cursor-default">MIS Reports Customization</span>
+                        <span class="bg-[#06110C] text-slate-300 hover:text-white hover:bg-[#A31C18] text-xs font-semibold px-3.5 py-1.5 rounded-xl border border-slate-800 transition-all cursor-default">Payroll & Reimbursements</span>
+                        <span class="bg-[#06110C] text-slate-300 hover:text-white hover:bg-[#A31C18] text-xs font-semibold px-3.5 py-1.5 rounded-xl border border-slate-800 transition-all cursor-default">Forex & Outward Remittances</span>
+                        <span class="bg-[#06110C] text-slate-[#A31C18] hover:text-white hover:bg-[#A31C18] text-xs font-semibold px-3.5 py-1.5 rounded-xl border border-slate-800 transition-all cursor-default">Bill of Entry (BOE) & Shipping Bills</span>
+                    </div>
+                </div>
+
+                <!-- Category 4 -->
+                <div class="spotlight-card bg-[#171717] p-6 rounded-2xl border border-slate-800 hover:border-[#A31C18]/60 shadow-lg space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                        <h3 class="font-extrabold text-xs uppercase tracking-wider text-white flex items-center gap-2">
+                            <i data-lucide="bar-chart-3" class="w-4 h-4 text-[#A31C18]"></i>
+                            MICROSOFT OFFICE & ANALYTICS
+                        </h3>
+                        <span class="text-xs text-[#A31C18] font-bold">5 skills</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-[#06110C] text-slate-300 hover:text-white hover:bg-[#A31C18] text-xs font-semibold px-3.5 py-1.5 rounded-xl border border-slate-800 transition-all cursor-default">Advance MS Excel</span>
+                        <span class="bg-[#06110C] text-slate-300 hover:text-white hover:bg-[#A31C18] text-xs font-semibold px-3.5 py-1.5 rounded-xl border border-slate-800 transition-all cursor-default">Power Query</span>
+                        <span class="bg-[#06110C] text-slate-300 hover:text-white hover:bg-[#A31C18] text-xs font-semibold px-3.5 py-1.5 rounded-xl border border-slate-800 transition-all cursor-default">Power BI Dashboards</span>
+                        <span class="bg-[#06110C] text-slate-300 hover:text-white hover:bg-[#A31C18] text-xs font-semibold px-3.5 py-1.5 rounded-xl border border-slate-800 transition-all cursor-default">Financial Analysis & Modeling</span>
+                        <span class="bg-[#06110C] text-slate-300 hover:text-white hover:bg-[#A31C18] text-xs font-semibold px-3.5 py-1.5 rounded-xl border border-slate-800 transition-all cursor-default">MS PowerPoint & Word</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WORK EXPERIENCE -->
+        <section id="experience" class="scroll-mt-32 space-y-8">
+            <div>
+                <div class="text-xs font-bold uppercase tracking-wider text-[#A31C18]">Career Trajectory & Impact</div>
+                <h2 class="text-3xl font-black text-white tracking-tight">Work Experience.</h2>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Job 1 -->
+                <div class="spotlight-card bg-[#171717] border border-[#A31C18]/50 rounded-3xl p-6 sm:p-8 shadow-2xl">
+                    <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800 pb-4">
+                        <div class="flex items-center gap-3">
+                            <h3 class="text-2xl font-bold text-white">Swan & Associates CA Firm</h3>
+                            <span class="bg-emerald-950 text-emerald-400 border border-emerald-800 text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1.5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                                Current Role
+                            </span>
+                        </div>
+                        <div class="text-xs font-semibold text-slate-400 bg-[#06110C] px-3.5 py-1.5 rounded-full border border-slate-800">
+                            Feb 2026 – Present • Full-time • Bangalore, India
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <h4 class="text-rose-400 font-bold text-lg">Tax Analyst</h4>
+                        <p class="text-slate-300 text-sm mt-1 leading-relaxed">
+                            Maintaining books of accounts for multiple corporate clients, directing GST/TDS tax compliance, building tax audit schedules, and designing customized MIS reports for executive decision-making.
+                        </p>
+
+                        <div class="mt-6 space-y-4">
+                            <div class="bg-[#06110C] p-4 rounded-xl border border-slate-800">
+                                <div class="text-xs font-bold text-slate-200 uppercase tracking-wider mb-2">General Ledger & Statutory Compliance</div>
+                                <ul class="space-y-2 text-xs text-slate-400 list-disc list-inside">
+                                    <li>Managed General Ledger, Accounts Receivable/Payable, and complex bank & vendor reconciliations.</li>
+                                    <li>Prepared GST workings and filed GSTR-1 & GSTR-3B returns with zero penalty record.</li>
+                                    <li>Processed monthly TDS payments and filed timely quarterly TDS returns on TRACES.</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-[#06110C] p-4 rounded-xl border border-slate-800">
+                                <div class="text-xs font-bold text-slate-200 uppercase tracking-wider mb-2">Tax Audit Support & MIS Reporting</div>
+                                <ul class="space-y-2 text-xs text-slate-400 list-disc list-inside">
+                                    <li>Prepared audit schedules, trial balance reconciliations, and supporting documentation for Tax Audits.</li>
+                                    <li>Designed custom MIS reporting formats in Excel & Power BI to support client cost control and cash planning.</li>
+                                    <li>Handled GST Registration, TAN setup, and DSC Registration for new client entities.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="spotlight-card bg-[#171717] border border-slate-800 hover:border-[#A31C18]/60 rounded-3xl p-6 sm:p-8 shadow-xl">
+                    <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800 pb-4">
+                        <h3 class="text-2xl font-bold text-white">Venkatesh & Raghavendra, Chartered Accountants</h3>
+                        <div class="text-xs font-semibold text-slate-400 bg-[#06110C] px-3.5 py-1.5 rounded-full border border-slate-800">
+                            July 2025 – September 2025 • Bangalore, India
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <h4 class="text-rose-400 font-bold text-lg">Senior Accounts Executive</h4>
+                        <div class="mt-3 space-y-3 text-xs text-slate-300">
+                            <p>• Performed end-to-end accounting and compliance activities using <strong>SAP FI, Zoho Books, and Tally Prime</strong>.</p>
+                            <p>• Prepared cash flow statements, cash budgets, and financial reporting statements supporting financial planning.</p>
+                            <p>• Coordinated import-export compliance activities, customs documentation, and regulatory filings using <strong>ICEGATE, DGFT, and GST Portal</strong>.</p>
+                            <p>• Handled Bill of Entry (BOE), Shipping Bills, and customs taxation reconciliations.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 3 -->
+                <div class="spotlight-card bg-[#171717] border border-slate-800 hover:border-[#A31C18]/60 rounded-3xl p-6 sm:p-8 shadow-xl">
+                    <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800 pb-4">
+                        <h3 class="text-2xl font-bold text-white">ETOE Interconnections Pvt Ltd</h3>
+                        <div class="text-xs font-semibold text-slate-400 bg-[#06110C] px-3.5 py-1.5 rounded-full border border-slate-800">
+                            December 2022 – June 2025 • Bangalore, India
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <h4 class="text-rose-400 font-bold text-lg">Accountant</h4>
+                        <div class="mt-3 space-y-3 text-xs text-slate-300">
+                            <p>• Managed full <strong>Procure-to-Pay (P2P)</strong> and <strong>Order-to-Cash (O2C)</strong> operational cycles in SAP FI & Tally Prime.</p>
+                            <p>• Oversaw Debtors/Creditors accounts, bank/vendor reconciliations, e-way bills, and e-invoicing.</p>
+                            <p>• Managed payroll processing, employee expense reimbursement accounting, and forex outward & inward remittance workflows.</p>
+                            <p>• Executed cost-effective procurement accounting strategies and customs compliance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACHIEVEMENTS & IMPACT -->
+        <section id="achievements" class="scroll-mt-32 space-y-8">
+            <div class="spotlight-card bg-[#171717] border border-slate-800 text-white rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+                <div class="space-y-8 relative z-10">
+                    <div>
+                        <div class="text-xs font-bold uppercase tracking-wider text-[#A31C18]">Honors, Recognitions & Milestones</div>
+                        <h2 class="text-3xl sm:text-4xl font-black tracking-tight mt-1">Achievements & Impact.</h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="spotlight-card bg-[#06110C] border border-slate-800 hover:border-[#A31C18] p-6 rounded-2xl transition-all duration-300 group hover:-translate-y-1">
+                            <div class="w-10 h-10 rounded-xl bg-[#A31C18]/20 text-[#A31C18] flex items-center justify-center mb-4 group-hover:bg-[#A31C18] group-hover:text-white transition-colors">
+                                <i data-lucide="shield-check" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white">100% Statutory Compliance</h3>
+                            <p class="text-xs text-slate-400 mt-2 leading-relaxed">Flawless track record of on-time GSTR-1, GSTR-3B, and quarterly TDS return filings with zero penalties.</p>
+                        </div>
+
+                        <div class="spotlight-card bg-[#06110C] border border-slate-800 hover:border-[#A31C18] p-6 rounded-2xl transition-all duration-300 group hover:-translate-y-1">
+                            <div class="w-10 h-10 rounded-xl bg-[#A31C18]/20 text-[#A31C18] flex items-center justify-center mb-4 group-hover:bg-[#A31C18] group-hover:text-white transition-colors">
+                                <i data-lucide="zap" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white">Customs & Forex Logistics</h3>
+                            <p class="text-xs text-slate-400 mt-2 leading-relaxed">Handled BOE, shipping bills, customs taxation, and inward/outward remittances via ICEGATE & DGFT.</p>
+                        </div>
+
+                        <div class="spotlight-card bg-[#06110C] border border-slate-800 hover:border-[#A31C18] p-6 rounded-2xl transition-all duration-300 group hover:-translate-y-1">
+                            <div class="w-10 h-10 rounded-xl bg-[#A31C18]/20 text-[#A31C18] flex items-center justify-center mb-4 group-hover:bg-[#A31C18] group-hover:text-white transition-colors">
+                                <i data-lucide="award" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white">Audit Schedule Precision</h3>
+                            <p class="text-xs text-slate-400 mt-2 leading-relaxed">Prepared audit schedules & reconciliations, enabling smooth Tax Audits for high-volume corporate clients.</p>
+                        </div>
+
+                        <div class="spotlight-card bg-[#06110C] border border-slate-800 hover:border-[#A31C18] p-6 rounded-2xl transition-all duration-300 group hover:-translate-y-1">
+                            <div class="w-10 h-10 rounded-xl bg-[#A31C18]/20 text-[#A31C18] flex items-center justify-center mb-4 group-hover:bg-[#A31C18] group-hover:text-white transition-colors">
+                                <i data-lucide="bar-chart-2" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white">Advanced MIS & Power BI</h3>
+                            <p class="text-xs text-slate-400 mt-2 leading-relaxed">Built dynamic Excel Power Query & Power BI financial dashboards for cash forecasting & decision-making.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURED PROJECTS / CASE STUDIES -->
+        <section id="projects" class="scroll-mt-32 space-y-8">
+            <div>
+                <div class="text-xs font-bold uppercase tracking-wider text-[#A31C18]">Case Studies & Projects</div>
+                <h2 class="text-3xl font-black text-white tracking-tight">Financial & Tax Operations Projects.</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="spotlight-card bg-[#171717] rounded-3xl border border-slate-800 hover:border-[#A31C18]/70 overflow-hidden shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
+                    <div class="p-6 space-y-4">
+                        <div class="aspect-video rounded-2xl bg-gradient-to-br from-[#06110C] via-slate-900 to-[#171717] border border-slate-800 p-5 flex flex-col justify-between text-white relative overflow-hidden">
+                            <div class="text-2xl font-black tracking-tight text-rose-400">P2P & O2C Overhaul</div>
+                            <div class="text-xs text-slate-400 font-medium">SAP FI & Tally Prime Execution</div>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-white">Procure-to-Pay & Order-to-Cash Automation</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed">
+                            Engineered streamlined vendor payable and customer receivable tracking systems in SAP FI. Reduced reconciliation turnaround time and eliminated discrepancy backlogs in multi-client accounts.
+                        </p>
+
+                        <div class="flex flex-wrap gap-1.5 pt-2">
+                            <span class="text-[10px] font-semibold bg-[#06110C] text-slate-300 px-2.5 py-1 rounded-md border border-slate-800">SAP FI</span>
+                            <span class="text-[10px] font-semibold bg-[#06110C] text-slate-300 px-2.5 py-1 rounded-md border border-slate-800">P2P Cycle</span>
+                            <span class="text-[10px] font-semibold bg-[#06110C] text-slate-300 px-2.5 py-1 rounded-md border border-slate-800">O2C Cycle</span>
+                            <span class="text-[10px] font-semibold bg-[#06110C] text-slate-300 px-2.5 py-1 rounded-md border border-slate-800">Reconciliations</span>
+                        </div>
+                    </div>
+
+                    <div class="px-6 pb-6 pt-2 border-t border-slate-800">
+                        <a href="#contact" class="w-full text-xs font-bold bg-[#A31C18] hover:bg-[#c2231e] text-white py-2.5 rounded-xl transition-colors flex items-center justify-center gap-1.5 shadow-md shadow-[#A31C18]/30">
+                            <span>Inquire Details</span>
+                            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="spotlight-card bg-[#171717] rounded-3xl border border-slate-800 hover:border-[#A31C18]/70 overflow-hidden shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
+                    <div class="p-6 space-y-4">
+                        <div class="aspect-video rounded-2xl bg-gradient-to-br from-[#06110C] via-slate-900 to-[#171717] border border-slate-800 p-5 flex flex-col justify-between text-white relative overflow-hidden">
+                            <div class="text-2xl font-black tracking-tight text-rose-400">Tax Audit & GST</div>
+                            <div class="text-xs text-slate-400 font-medium">Statutory Compliance Framework</div>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-white">GST & Tax Audit Schedule System</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed">
+                            Formulated standardized GST working templates (GSTR-1, 3B) and TDS schedules for tax audit readiness, leading to 100% compliance across multiple corporate client portfolios.
+                        </p>
+
+                        <div class="flex flex-wrap gap-1.5 pt-2">
+                            <span class="text-[10px] font-semibold bg-[#06110C] text-slate-300 px-2.5 py-1 rounded-md border border-slate-800">GST Filings</span>
+                            <span class="text-[10px] font-semibold bg-[#06110C] text-slate-300 px-2.5 py-1 rounded-md border border-slate-800">TRACES</span>
+                            <span class="text-[10px] font-semibold bg-[#06110C] text-slate-300 px-2.5 py-1 rounded-md border border-slate-800">TDS Audits</span>
+                            <span class="text-[10px] font-semibold bg-[#06110C] text-slate-300 px-2.5 py-1 rounded-md border border-slate-800">Income Tax</span>
+                        </div>
+                    </div>
+
+                    <div class="px-6 pb-6 pt-2 border-t border-slate-800">
+                        <a href="#contact" class="w-full text-xs font-bold bg-[#A31C18] hover:bg-[#c2231e] text-white py-2.5 rounded-xl transition-colors flex items-center justify-center gap-1.5 shadow-md shadow-[#A31C18]/30">
+                            <span>Inquire Details</span>
+                            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="spotlight-card bg-[#171717] rounded-3xl border border-slate-800 hover:border-[#A31C18]/70 overflow-hidden shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
+                    <div class="p-6 space-y-4">
+                        <div class="aspect-video rounded-2xl bg-gradient-to-br from-[#06110C] via-slate-900 to-[#171717] border border-slate-800 p-5 flex flex-col justify-between text-white relative overflow-hidden">
+                            <div class="text-2xl font-black tracking-tight text-rose-400">Import-Export Compliance</div>
+                            <div class="text-xs text-slate-400 font-medium">ICEGATE & DGFT Operations</div>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-white">Customs Taxation & Forex Accounting</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed">
+                            Managed customs shipping documentation, Bill of Entry (BOE), outward/inward forex remittance entries, and duty tax compliance for international trade transactions.
+                        </p>
+
+                        <div class="flex flex-wrap gap-1.5 pt-2">
+                            <span class="text-[10px] font-semibold bg-[#06110C] text-slate-300 px-2.5 py-1 rounded-md border border-slate-800">ICEGATE</span>
+                            <span class="text-[10px] font-semibold bg-[#06110C] text-slate-300 px-2.5 py-1 rounded-md border border-slate-800">DGFT</span>
+                            <span class="text-[10px] font-semibold bg-[#06110C] text-slate-300 px-2.5 py-1 rounded-md border border-slate-800">Forex Remittances</span>
+                            <span class="text-[10px] font-semibold bg-[#06110C] text-slate-300 px-2.5 py-1 rounded-md border border-slate-800">Customs BOE</span>
+                        </div>
+                    </div>
+
+                    <div class="px-6 pb-6 pt-2 border-t border-slate-800">
+                        <a href="#contact" class="w-full text-xs font-bold bg-[#A31C18] hover:bg-[#c2231e] text-white py-2.5 rounded-xl transition-colors flex items-center justify-center gap-1.5 shadow-md shadow-[#A31C18]/30">
+                            <span>Inquire Details</span>
+                            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CREDENTIALS SECTION -->
+        <section id="credentials" class="scroll-mt-32 space-y-8">
+            <div>
+                <div class="text-xs font-bold uppercase tracking-wider text-[#A31C18]">Certifications & Tools</div>
+                <h2 class="text-3xl font-black text-white tracking-tight">Professional Credentials.</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="spotlight-card bg-[#171717] p-6 rounded-2xl border border-slate-800 hover:border-[#A31C18] shadow-md flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-start">
+                            <h3 class="font-bold text-white text-base leading-snug">SAP FI Integration (SD & MM Modules)</h3>
+                            <i data-lucide="external-link" class="w-4 h-4 text-slate-400 group-hover:text-[#A31C18] transition-colors"></i>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-2 leading-relaxed">Practical expertise in SAP Financial Accounting with integrated Sales & Distribution (SD) and Materials Management (MM) modules for enterprise accounting.</p>
+                    </div>
+                    <div class="mt-6 text-xs text-slate-500 font-semibold uppercase tracking-wider border-t border-slate-800 pt-3">
+                        DOMAIN: <span class="text-rose-400">SAP ERP FI/SD/MM</span>
+                    </div>
+                </div>
+
+                <div class="spotlight-card bg-[#171717] p-6 rounded-2xl border border-slate-800 hover:border-[#A31C18] shadow-md flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-start">
+                            <h3 class="font-bold text-white text-base leading-snug">Advanced MS Excel & Power BI Financial Analysis</h3>
+                            <i data-lucide="external-link" class="w-4 h-4 text-slate-400 group-hover:text-[#A31C18] transition-colors"></i>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-2 leading-relaxed">Proficiency in Power Query, financial modeling, dynamic dashboard creation, cash flow budgeting, and MIS report customization.</p>
+                    </div>
+                    <div class="mt-6 text-xs text-slate-500 font-semibold uppercase tracking-wider border-t border-slate-800 pt-3">
+                        DOMAIN: <span class="text-rose-400">Financial Modeling</span>
+                    </div>
+                </div>
+
+                <div class="spotlight-card bg-[#171717] p-6 rounded-2xl border border-slate-800 hover:border-[#A31C18] shadow-md flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-start">
+                            <h3 class="font-bold text-white text-base leading-snug">Statutory Taxation & Compliance Portals</h3>
+                            <i data-lucide="external-link" class="w-4 h-4 text-slate-400 group-hover:text-[#A31C18] transition-colors"></i>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-2 leading-relaxed">Hands-on exposure to government statutory portals including GST Portal, TRACES, Income Tax Portal, ICEGATE, DGFT, and e-Prerana.</p>
+                    </div>
+                    <div class="mt-6 text-xs text-slate-500 font-semibold uppercase tracking-wider border-t border-slate-800 pt-3">
+                        DOMAIN: <span class="text-rose-400">Statutory Compliance</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="scroll-mt-32">
+            <div class="bg-[#171717] text-white rounded-3xl overflow-hidden shadow-2xl border border-[#A31C18]/40 grid grid-cols-1 lg:grid-cols-12">
+                <div class="lg:col-span-5 bg-[#06110C] p-8 sm:p-12 flex flex-col justify-between space-y-8 border-r border-slate-800">
+                    <div>
+                        <h2 class="text-4xl font-black text-white tracking-tight">Contact</h2>
+                    </div>
+
+                    <div class="space-y-4 text-xs">
+                        <div class="flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-xl bg-[#A31C18]/20 text-[#A31C18] flex items-center justify-center">
+                                <i data-lucide="mail" class="w-4 h-4"></i>
+                            </div>
+                            <div>
+                                <div class="text-slate-400 text-[10px] uppercase font-bold">EMAIL</div>
+                                <a href="mailto:shrishail.a.hireholi@gmail.com" class="text-white hover:text-rose-400 font-medium">shrishail.a.hireholi@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-xl bg-[#A31C18]/20 text-[#A31C18] flex items-center justify-center">
+                                <i data-lucide="phone" class="w-4 h-4"></i>
+                            </div>
+                            <div>
+                                <div class="text-slate-400 text-[10px] uppercase font-bold">PHONE</div>
+                                <a href="tel:+919108748844" class="text-white hover:text-rose-400 font-medium">+91 9108748844</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-xl bg-[#A31C18]/20 text-[#A31C18] flex items-center justify-center">
+                                <i data-lucide="map-pin" class="w-4 h-4"></i>
+                            </div>
+                            <div>
+                                <div class="text-slate-400 text-[10px] uppercase font-bold">LOCATION</div>
+                                <span class="text-white font-medium">Bangalore, India</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-xl bg-[#A31C18]/20 text-[#A31C18] flex items-center justify-center">
+                                <i data-lucide="linkedin" class="w-4 h-4"></i>
+                            </div>
+                            <div>
+                                <div class="text-slate-400 text-[10px] uppercase font-bold">LINKEDIN</div>
+                                <a href="https://www.linkedin.com/in/shrishail-hireholi-29233a258" target="_blank" rel="noopener noreferrer" class="text-white hover:text-rose-400 font-medium">Shrishail Hireholi</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 p-8 sm:p-12 bg-[#171717] text-white flex flex-col justify-between">
+                    <div>
+                        <div class="text-xs font-bold uppercase tracking-wider text-[#A31C18]">REACH OUT</div>
+                        <h3 class="text-2xl font-bold mt-1">Get in touch</h3>
+
+                        <div id="success-msg" class="hidden my-8 p-6 bg-[#06110C] rounded-2xl border border-[#A31C18] text-center space-y-2">
+                            <i data-lucide="check-circle-2" class="w-9 h-9 mx-auto text-emerald-400"></i>
+                            <div class="text-lg font-bold">Message Sent Successfully!</div>
+                            <p class="text-xs text-slate-400">Thank you for reaching out. I'll get back to you shortly.</p>
+                        </div>
+
+                        <form id="contact-form" class="mt-6 space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-[11px] uppercase font-semibold mb-1 text-slate-300">First Name</label>
+                                    <input type="text" required placeholder="First name" class="w-full px-4 py-2.5 rounded-xl bg-[#06110C] border border-slate-800 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-[#A31C18]">
+                                </div>
+                                <div>
+                                    <label class="block text-[11px] uppercase font-semibold mb-1 text-slate-300">Last Name</label>
+                                    <input type="text" placeholder="Last name" class="w-full px-4 py-2.5 rounded-xl bg-[#06110C] border border-slate-800 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-[#A31C18]">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-[11px] uppercase font-semibold mb-1 text-slate-300">Email</label>
+                                <input type="email" required placeholder="email@company.com" class="w-full px-4 py-2.5 rounded-xl bg-[#06110C] border border-slate-800 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-[#A31C18]">
+                            </div>
+
+                            <div>
+                                <label class="block text-[11px] uppercase font-semibold mb-1 text-slate-300">Message</label>
+                                <textarea rows="3" required placeholder="Type your message here..." class="w-full px-4 py-2.5 rounded-xl bg-[#06110C] border border-slate-800 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-[#A31C18] resize-none"></textarea>
+                            </div>
+
+                            <div class="flex items-center gap-2 pt-1">
+                                <input type="checkbox" id="consent" class="rounded accent-[#A31C18]">
+                                <label for="consent" class="text-[11px] text-slate-400">Grant permission to contact me at this email</label>
+                            </div>
+
+                            <div class="pt-2">
+                                <button type="submit" class="w-full sm:w-auto bg-[#A31C18] hover:bg-[#c2231e] text-white font-bold text-xs px-8 py-3 rounded-xl transition-all shadow-lg shadow-[#A31C18]/30 flex items-center justify-center gap-2">
+                                    <span>Send Message</span>
+                                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS / ENDORSEMENTS -->
+        <section class="space-y-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <div class="text-xs font-bold uppercase tracking-wider text-[#A31C18]">Peer & Client Feedback</div>
+                    <h2 class="text-3xl font-black text-white tracking-tight">Endorsements.</h2>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <button id="prev-testimonial" class="p-2.5 rounded-full border border-slate-800 bg-[#171717] hover:bg-[#A31C18] text-slate-300 hover:text-white transition-colors shadow-sm">
+                        <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                    </button>
+                    <button id="next-testimonial" class="p-2.5 rounded-full border border-slate-800 bg-[#171717] hover:bg-[#A31C18] text-slate-300 hover:text-white transition-colors shadow-sm">
+                        <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="spotlight-card bg-[#171717] border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-xl relative min-h-[200px] flex flex-col justify-between">
+                <div class="text-5xl text-[#A31C18] font-serif font-black leading-none mb-2">“</div>
+                <p id="testimonial-quote" class="text-slate-200 text-sm sm:text-base leading-relaxed italic">
+                    Shrishail brings extreme precision to tax compliance and reconciliations. His mastery of SAP FI and statutory filing portals makes him an invaluable asset for complex financial workflows.
+                </p>
+
+                <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
+                    <div>
+                        <h4 id="testimonial-author" class="font-bold text-white text-sm">Senior Partner</h4>
+                        <p id="testimonial-title" class="text-xs text-[#A31C18] font-medium">Swan & Associates CA Firm</p>
+                    </div>
+                    <div id="testimonial-counter" class="text-xs font-semibold text-slate-500">1 / 3</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-800 bg-[#171717] py-8 text-center text-xs text-slate-500">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="font-bold text-white text-sm">
+                Shrishail Hireholi <span class="text-[#A31C18] font-normal">| Senior Accountant Portfolio</span>
+            </div>
+            <div>© 2026 Charcoal Black & Crimson Red Theme. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <!-- JavaScript logic -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Spotlight Mouse Hover Effect for all cards
+        document.querySelectorAll('.spotlight-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+
+        // Mobile Menu Handling
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileCloseBtn = document.getElementById('mobile-close-btn');
+
+        mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.remove('hidden'));
+        mobileCloseBtn.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // Testimonials Carousel Data & Logic
+        const testimonials = [
+            {
+                quote: "Shrishail brings extreme precision to tax compliance and reconciliations. His mastery of SAP FI and statutory filing portals makes him an invaluable asset for complex financial workflows.",
+                author: "Senior Partner",
+                title: "Swan & Associates CA Firm"
+            },
+            {
+                quote: "Extremely reliable in managing end-to-end P2P and O2C cycles. His ability to build custom MIS reports and cash budgets helped our team maintain clear financial visibility.",
+                author: "Audit Partner",
+                title: "Venkatesh & Raghavendra CAs"
+            },
+            {
+                quote: "Shrishail handled our forex payment transactions, customs import documentation, and daily ledger reconciliations efficiently without missing a single tax deadline.",
+                author: "Finance Manager",
+                title: "ETOE Interconnections Pvt Ltd"
+            }
+        ];
+
+        let currentTestimonial = 0;
+        const quoteEl = document.getElementById('testimonial-quote');
+        const authorEl = document.getElementById('testimonial-author');
+        const titleEl = document.getElementById('testimonial-title');
+        const counterEl = document.getElementById('testimonial-counter');
+
+        function updateTestimonial() {
+            const t = testimonials[currentTestimonial];
+            quoteEl.textContent = `“${t.quote}”`;
+            authorEl.textContent = t.author;
+            titleEl.textContent = t.title;
+            counterEl.textContent = `${currentTestimonial + 1} / ${testimonials.length}`;
+        }
+
+        document.getElementById('next-testimonial').addEventListener('click', () => {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            updateTestimonial();
+        });
+
+        document.getElementById('prev-testimonial').addEventListener('click', () => {
+            currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+            updateTestimonial();
+        });
+
+        // Contact Form Submission
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            document.getElementById('contact-form').classList.add('hidden');
+            document.getElementById('success-msg').classList.remove('hidden');
+            setTimeout(() => {
+                document.getElementById('contact-form').reset();
+                document.getElementById('contact-form').classList.remove('hidden');
+                document.getElementById('success-msg').classList.add('hidden');
+            }, 4000);
+        });
+
+        // Active Navbar Highlight on Scroll
+        window.addEventListener('scroll', () => {
+            const sections = ['home', 'about', 'education', 'skills', 'experience', 'achievements', 'projects', 'credentials', 'contact'];
+            const scrollPos = window.scrollY + 250;
+            sections.forEach(secId => {
+                const el = document.getElementById(secId);
+                if (el) {
+                    const top = el.offsetTop;
+                    const height = el.offsetHeight;
+                    if (scrollPos >= top && scrollPos < top + height) {
+                        document.querySelectorAll('.nav-link').forEach(link => {
+                            if (link.getAttribute('href') === `#${secId}`) {
+                                link.classList.add('bg-[#A31C18]', 'text-white', 'font-semibold');
+                            } else {
+                                link.classList.remove('bg-[#A31C18]', 'text-white', 'font-semibold');
+                            }
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
